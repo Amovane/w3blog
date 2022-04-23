@@ -76,7 +76,6 @@ export async function getServerSideProps() {
 
   const contract = new ethers.Contract(contractAddress, Blog.abi, provider);
   const data = await contract.fetchPosts();
-  console.log(data);
   return {
     props: {
       posts: JSON.parse(JSON.stringify(data)),
